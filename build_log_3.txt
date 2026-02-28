@@ -1,0 +1,26 @@
+
+> idontthinkillfinish@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 4.1s
+  Running TypeScript ...
+Failed to compile.
+
+./src/lib/compress-video.ts:54:22
+Type error: Type 'FileData' is not assignable to type 'BlobPart'.
+  Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'BlobPart'.
+    Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'ArrayBufferView<ArrayBuffer>'.
+      Types of property 'buffer' are incompatible.
+        Type 'ArrayBufferLike' is not assignable to type 'ArrayBuffer'.
+          Type 'SharedArrayBuffer' is missing the following properties from type 'ArrayBuffer': resizable, resize, detached, transfer, transferToFixedLength
+
+  52 |
+  53 |     const data = await ffmpeg.readFile(outputName);
+> 54 |     return new Blob([data], { type: "video/mp4" });
+     |                      ^
+  55 | }
+  56 |
+Next.js build worker exited with code: 1 and signal: null
